@@ -1,0 +1,94 @@
+﻿@model services_app.Models.User
+
+@{
+    ViewData["Title"] = "Додати користувача";
+}
+
+<h2>Додати користувача</h2>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #007bff;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .button {
+        display: inline-block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #007bff;
+        padding: 10px;
+        border: 1px solid #007bff;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+        .button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+</style>
+
+<form asp-action="AddUser" method="post">
+    <div class="form-group">
+        <label asp-for="FirstName">FirstName</label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName">LastName</label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EmailName">EmailName</label>
+        <input asp-for="EmailName" class="form-control" />
+        <span asp-validation-for="EmailName" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Додати користувача</button>
+    <a href="/Pages/Index" class="button">Повернутися на Головну</a>
+</form>
